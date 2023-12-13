@@ -25,4 +25,28 @@ public class PantallaHoraYFecha
     {
         return pantallaHoras.getTextoDeLaPantalla() + ":" + pantallaMinutos.getTextoDeLaPantalla()+" "+pantallaDia.getTextoDeLaPantalla()+"-"+pantallaMes.getTextoDeLaPantalla()+"-"+pantallaAño.getTextoDeLaPantalla();
     }
+        public void avanzarMinuto() {
+        if (pantallaMinutos.getValorAlmacenado() <= 60) {
+            pantallaMinutos.incrementaValorAlmacenado();
+            if (pantallaMinutos.getValorAlmacenado() == 0) {
+                pantallaHoras.incrementaValorAlmacenado(); 
+                if (pantallaHoras.getValorAlmacenado() == 0) {
+                    pantallaDia.incrementaValorAlmacenado();
+                    if (pantallaDia.getValorAlmacenado() == 1) {
+                        pantallaMes.incrementaValorAlmacenado();
+                        if (pantallaMes.getValorAlmacenado() == 1) {
+                            pantallaAño.incrementaValorAlmacenado();
+                        }
+                    }
+                }
+            }
+        }
+    }
+     public void fijarFechaYHora(int minAct, int horaAct, int diaAct, int mesAct, int anoAct) {
+        pantallaMinutos.setValorAlmacenado(minAct);
+        pantallaHoras.setValorAlmacenado(horaAct);
+        pantallaDia.setValorAlmacenado(diaAct);
+        pantallaMes.setValorAlmacenado(mesAct);
+        pantallaAño.setValorAlmacenado(anoAct);
+    }
 }
