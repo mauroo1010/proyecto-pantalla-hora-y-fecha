@@ -1,4 +1,4 @@
-/**
+    /**
  * La clase PantallaDosDigitos representa una pantalla que muestra valores numéricos enteros 
  * desde un valor inicial a un valor limite. El valor de la pantalla se muestra siempre con dos dígitos. 
  * Los valores iniciales y limite se especifican cuando se crea el objeto. Se puede hacer avanzar el valor 
